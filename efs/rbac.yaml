@@ -24,7 +24,7 @@ subjects:
   - kind: ServiceAccount
     name: efs-provisioner
      # replace with namespace where provisioner is deployed
-    namespace: default
+    namespace: kubeflow
 roleRef:
   kind: ClusterRole
   name: efs-provisioner-runner
@@ -47,7 +47,7 @@ subjects:
   - kind: ServiceAccount
     name: efs-provisioner
     # replace with namespace where provisioner is deployed
-    namespace: default
+    namespace: kubeflow
 roleRef:
   kind: Role
   name: leader-locking-efs-provisioner
