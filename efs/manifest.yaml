@@ -66,6 +66,7 @@ kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
   name: efs-volume-claim
+  namespace: kubeflow
   annotations:
     volume.beta.kubernetes.io/storage-class: "aws-efs"
 spec:
