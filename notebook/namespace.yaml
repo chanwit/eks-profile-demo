@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  annotations:
+    owner: anonymous@kubeflow.org
+  labels:
+    istio-injection: enabled
+    katib-metricscollector-injection: enabled
+  name: eks-example
+  ownerReferences:
+  - apiVersion: kubeflow.org/v1beta1
+    blockOwnerDeletion: true
+    controller: true
+    kind: Profile
+    name: eks-example
+spec:
+  finalizers:
+  - kubernetes
+status:
+  phase: Active

@@ -1,0 +1,33 @@
+apiVersion: kubeflow.org/v1beta1
+kind: Notebook
+metadata:
+  labels:
+    app: kale
+  name: kale
+  namespace: eks-example
+spec:
+  template:
+    spec:
+      containers:
+      - env: []
+        image: docker.io/chanwit/jupyter-kale
+        name: kale
+        resources:
+          limits: {}
+          requests:
+            cpu: "0.5"
+            memory: 1.0Gi
+        volumeMounts:
+        - mountPath: /home/jovyan
+          name: workspace-kale
+        - mountPath: /dev/shm
+          name: dshm
+      serviceAccountName: default-editor
+      ttlSecondsAfterFinished: 300
+      volumes:
+      - name: workspace-kale
+        persistentVolumeClaim:
+          claimName: workspace-kale
+      - emptyDir:
+          medium: Memory
+        name: dshm
