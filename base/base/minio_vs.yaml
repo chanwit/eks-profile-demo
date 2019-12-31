@@ -13,7 +13,7 @@ spec:
     - uri:
         prefix: /minio
     rewrite:
-      uri: /minio
+      uri: /
     route:
     - destination:
         host: minio-service.kubeflow.svc.cluster.local
