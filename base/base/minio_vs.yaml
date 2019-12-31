@@ -12,6 +12,8 @@ spec:
   - match:
     - uri:
         prefix: /minio
+    - uri:
+        prefix: /minio/
     rewrite:
       uri: /
     route:
