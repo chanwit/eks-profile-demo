@@ -13,7 +13,7 @@ metadata:
   name: minio-lb-service
   namespace: kubeflow
 spec:
-  type: ClusterIP
+  type: LoadBalancer
   ports:
   - port: 9000
     protocol: TCP
